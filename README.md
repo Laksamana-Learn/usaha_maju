@@ -1,2 +1,2 @@
 # usaha_maju
-Tugas Akhit membuat website untuk UMKM. SMK Krian 1 Sidoarjo
+Tugas Akhir membuat website untuk UMKM. SMK Krian 1 Sidoarjo
