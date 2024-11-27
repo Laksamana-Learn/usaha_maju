@@ -1,0 +1,50 @@
+.navbar_bg {
+    background-color: #7E6363;
+}
+
+.hilang{
+    opacity: 0%;
+    width: 30px;
+}
+
+.background-image {
+    background-image: url('/img/rumah_bg_50.png'); /* Adjust the path as necessary */
+    background-size: contain; /* Cover the entire area */
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+}
+
+
+.translate-y-5vh {
+    transform: translateY(-5vh);
+}
+
+.translatey-5vh {
+    transform: translateY(5vh);
+}
+
+.centered-div {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+} 
+
+.cs-nav-active1{
+    box-shadow: inset -5px 0 0 0 #4288CE;
+    color: #4288CE;
+    background-color: #4288CE;
+}
+
+
+/* .frame.active {
+    box-shadow: inset -5px 0 0 0 #ffffff;
+    color: #ffff;
+}
+
+
+.lincia {
+    box-shadow: inset -5px 0 0 0 #ffffff;
+    color: #ffffff;
+} */
