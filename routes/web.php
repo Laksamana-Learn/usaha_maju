@@ -19,11 +19,14 @@ Route::get('/', function() {
 });
 
 Route::get('/product', function() {
-    return view('products/product_page');    
+
+    $products = Product::paginate(8)->onEachSide(2);
+    
+    return view('products/product_page', ["products"=>$products]);    
 });
 
-Route::get('/detail-product', function() {
-    return view('products/detail_product');    
+Route::get('/detail-product/{product:slug}', function(Product $product) {
+    return view('products/detail_product', ['product'=>$product]);    
 });
 
 Route::get('/login', function() {

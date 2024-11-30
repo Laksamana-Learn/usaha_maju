@@ -21,6 +21,7 @@ class Product extends Model
         'product_id',
         'nama',
         'kategori',
+        'slug',
         'deskripsi',
         'harga',
         'stok',
@@ -28,6 +29,18 @@ class Product extends Model
     ];
     //
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($product) {
+            $product->slug = Str::slug($product->nama);
+        });
+
+        static::updating(function ($product) {
+            $product->slug = Str::slug($product->nama);
+        });
+    }
 
     public function favorite(): HasMany
     {

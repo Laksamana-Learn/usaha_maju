@@ -1,16 +1,4 @@
-<a href="/detail-product/{{ $product->slug }}">
-<div class="mb-12">
-    <img src="/storage/{{$product->foto}}" alt="" class="place-self-center aspect-square w-16 rounded-lg object-cover lg:block lg:w-5/6">
-    <div class="text-center self-center">
-        <h3 class="font-bold">{{ $product->nama }}</h3>
-        <p class="font-light">{{ "Rp. " . $product->harga }}</p>
-        <p class="font-light">{{ "Stok : " . $product->stok }}</p>
-    </div>
-</div>
-</a>
 
-{{-- Pagination (disabled) --}}
-{{-- 
 <div class="container flex justify-center items-center mb-8">
     <ul class="flex items-center -space-x-px h-10 text-base">
         <li>
@@ -22,7 +10,7 @@
             </a>
         </li>
     
-        //  Angka Ditengah 
+        {{-- //  Angka Ditengah  --}}
         <li>
             <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
         </li>
@@ -37,4 +25,4 @@
             </a>
         </li>
         </ul>
-</div> --}}     
+</div>
