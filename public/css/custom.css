@@ -31,10 +31,14 @@
     align-items: center;
 } 
 
-.cs-nav-active1{
-    box-shadow: inset -5px 0 0 0 #4288CE;
-    color: #4288CE;
-    background-color: #4288CE;
+
+.nav-link.custom {
+    background-color: white;
+    color: black !important;
+}
+
+.nav-link.customfont {
+    color: white;
 }
 
 
