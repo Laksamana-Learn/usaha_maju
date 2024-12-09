@@ -40,7 +40,7 @@
                 <div> 
                     <h1 class="translate-y-5vh text-4xl font-black font-serif">Toko Bangunan <br> Usaha Maju</h1>
                     <div class="container w-1/2 overflow-hidden">
-                        <p class="translatey-5vh contents font-mono">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex expedita temporibus aspernatur cum animi cupiditate, sed quod laudantium explicabo libero ipsam voluptatem, in aliquam nemo voluptate itaque. Laudantium, pariatur praesentium!</p>
+                        <p class="translatey-5vh contents font-mono">Kami adalah toko bangunan yang berdedikasi tinggi!</p>
                     </div>
                 </div>
             </div>
