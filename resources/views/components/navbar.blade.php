@@ -1,6 +1,6 @@
 
     <div class="container-fluid navbar_bg">
-        <header class="d-flex flex-wrap lg:justify-content-center py-2 ">
+        <header class="md:flex flex-wrap lg:justify-content-center py-2 ">
             <div class="flex align-items-center py-2 mb-md-0 me-md-auto max-sm:grid max-sm:grid-rows-2" >
                 
                 {{-- SIDEBAR --}}
@@ -23,7 +23,9 @@
                         <div class="overlay-content max-md:w-4/5 max-md:place-items-center max-md:left-4">
                             <x-navmenu href="/" :active="request() -> is('/')">Home</x-navmenu>
                             <x-navmenu href="/product" :active="request() -> is('product')">Product</x-navmenu>
-                            <x-navmenu href="/login" :active="request() -> is('login')">Masuk</x-navmenu>
+                            <div class="hidden">
+                                <x-navmenu href="/login" :active="request() -> is('login')">Masuk</x-navmenu>
+                            </div>
                             <x-navmenu href="/about-us" :active="request() -> is('about-us')">About Us</x-navmenu>
                         </div>
                     </div>
@@ -48,7 +50,7 @@
                         <li>
                             <a href="/about-us" class="flex items-center p-2 pl-11 w-full text-base font-normal text-black rounded-lg transition duration-75 group hover:bg-white ">About Us</a>
                         </li>
-                        <li>
+                        <li class="hidden">
                             <a href="/login" class="flex items-center p-2 pl-11 w-full text-base font-normal text-black rounded-lg transition duration-75 group hover:bg-white ">Masuk</a>
                         </li>
                     </ul>
@@ -68,8 +70,8 @@
                 <li class="nav-item"><x-navmenudesktop href="/" :active="request() -> is('/')">Home</x-navmenudesktop></li>
                 <li class="nav-item text-gray"><x-navmenudesktop href="/product" :active="request() -> is('product')">Product</x-navmenudesktop></li>
                 <li class="nav-item"><x-navmenudesktop href="/about-us" :active="request() -> is('about-us')">About Us</x-navmenudesktop></li>
-                <li class="nav-item ps-5 mr-4"><x-navmenudesktop href="/login" :active="request() -> is('login')">Masuk</x-navmenudesktop></li>
-                <li class="nav-item pt-1" ><img src="/icon/cart.svg" alt="cart icon" class="pt-2 me-5 self-center"></li>
+                <li class="nav-item ps-5 mr-4 hidden"><x-navmenudesktop href="/login" :active="request() -> is('login')">Masuk</x-navmenudesktop></li>
+                <li class="nav-item pt-1 ps-5" ><img src="/icon/cart.svg" alt="cart icon" class="pt-2 me-5 self-center"></li>
             </ul>
         </header>
     </div>
