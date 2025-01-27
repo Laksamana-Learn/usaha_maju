@@ -12,7 +12,7 @@
                         <span class="s-3"> </span>
                     </button>
                 </div>
-                <div id="myNav" class="overlay !bg-blue-400">
+                <div id="myNav" class="overlay">
                     <div class="menu_btn-style ">
                     <button onclick="closeNav()">
                         <span class="s-1"> </span>
