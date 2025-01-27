@@ -26,15 +26,16 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     
     <title>Usaha Maju</title>
+    <link rel="icon" href="/img/logo.png">
     @vite('resources/css/app.css')
 
 </head>
-<body>
+<body class="overflow-y-scroll no-scrollbar">
 
 <x-navbar></x-navbar>
 
 {{-- Search Bar --}}
-<form method="GET" class="max-w-screen-lg mx-auto my-9 max-xl:px-4">   
+<form method="GET" class="max-w-screen-lg mx-auto my-4 max-xl:px-4">   
     <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
     <div class="relative">
         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none -translate-x-4">
@@ -50,18 +51,65 @@
 </form>
 
 
+{{-- FILTER --}}
+<div class="flex items-center justify-center p-4">
+    <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+    class="text-white bg-slate-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+    type="button">
+    Filter berdasarkan Kategori
+    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+    </button>
 
-{{-- Product --}}
-<div class="grid mx-auto mt-6 max-w-2xl sm:px-6  lg:max-w-7xl lg:grid-cols-4 lg:gap-x-8 lg:px-8 gap-y-32">
-    @foreach ($products as $product)
-        <x-productpage :product="$product" />
-    @endforeach
+    <!-- Dropdown menu -->
+    <div id="dropdown" class="z-10 hidden w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+    <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">
+        Category
+    </h6>
+    <form action="/product" class="container">
+        @csrf
+        <ul class="space-y-2 text-sm" aria-labelledby="dropdownDefault">
+            @foreach ($categories as $category)
+            <li class="flex items-center">
+                <input type="radio" name="kategori" id="{{ $category->kategori }}" value="{{$category->id}}">
+                
+                <label for="{{ $category->kategori }}" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                    {{ $category->kategori }}
+                </label>
+            </li>
+            @endforeach
+        </ul>
 
+        <button type="submit" class="btn btn-primary text-black mt-4">CARI</button>
+    </form>
+    </div>
 </div>
 
 
+
+{{-- Product --}}
+
+@if ($category_products)
+    <div class="grid mx-auto mt-6 max-w-2xl sm:px-6  lg:max-w-7xl lg:grid-cols-4 lg:gap-x-8 lg:px-8 gap-y-32">
+        @foreach ($category_products as $product)
+            <x-productpage :product="$product" />
+        @endforeach
+    </div>
+
+@else
+    <div class="grid mx-auto mt-6 max-w-2xl sm:px-6  lg:max-w-7xl lg:grid-cols-4 lg:gap-x-8 lg:px-8 gap-y-32">
+        @foreach ($products as $product)
+            <x-productpage :product="$product" />
+        @endforeach
+    </div>
+@endif
+
+
+
 {{-- Pagination --}}
-{{ $products ->links() }}
+{{ $products->appends(request()->except('page'))->links() }}
 
 
 

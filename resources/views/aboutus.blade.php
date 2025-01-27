@@ -25,17 +25,18 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     
     <title>Usaha Maju</title>
+    <link rel="icon" href="/img/logo.png">
 
     @vite('resources/css/app.css')
 
 
 </head>
-<body>
+<body class="overflow-y-scroll no-scrollbar">
 
 <x-navbar></x-navbar>
 
 <x-aboutuscomponent></x-aboutuscomponent>
-    
+
 <x-whatsapp></x-whatsapp>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>

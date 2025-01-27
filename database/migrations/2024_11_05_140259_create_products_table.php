@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('product_id') -> unique();
             $table->string('nama') -> unique();
             $table->string('slug');
-            $table->string('kategori');
-            $table->foreign('kategori')->references('kategori')->on('categories')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->longText('deskripsi');
             $table->integer('harga');
             $table->integer('stok');

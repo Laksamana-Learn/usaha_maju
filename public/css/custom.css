@@ -1,5 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
+.no-scrollbar{
+    -ms-overflow-style: none;
+}
+
 .navbar_bg {
-    background-color: #7E6363;
+    background-color: #b0b0b0;
 }
 
 .hilang{
@@ -11,7 +23,7 @@
     background-image: url('/img/rumah_bg_50.png'); /* Adjust the path as necessary */
     background-size: contain; /* Cover the entire area */
     background-position: center;
-    height: 100vh; /* Full viewport height */
+    /* height: 100vh; Full viewport height */
     width: 100%; /* Full width */
 }
 
@@ -28,7 +40,6 @@
     display: flex;
     min-height: 100vh;
     justify-content: center;
-    align-items: center;
 } 
 
 

@@ -26,39 +26,33 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     
     <title>Usaha Maju</title>
+    <link rel="icon" href="/img/logo.png">
     @vite('resources/css/app.css')
 
     
 </head>
-<body>
+<body class="overflow-y-scroll no-scrollbar"> 
 
     <x-navbar></x-navbar>
 
-    <div class="bg-slate-500 min-h-lvh">
-        <div class="container h-full w-11/12 grid lg:grid-cols-3 lg:gap-x-4 pb-4">
-            <div class="col-span-2 grid grid-rows-2 mt-4 lg:gap-y-4 gap-y-8">
+    <div class="min-h-lvh">
+        <div class="container h-full w-11/12 grid lg:grid-cols-2 lg:gap-x-4 pb-4">
+            <div class="col-span-2 grid mt-4 lg:gap-y-4 gap-y-8">
                 
                 <div class="grid grid-cols-2 lg:gap-x-4 gap-x-4">
-                    <div class="flex rounded-3xl bg-slate-300 overflow-hidden h-72 w-auto">
-                        <img src="/storage/{{$product->foto}}" alt="" class="object-fit min-w-full h-auto">
+                    <div class="flex rounded-3xl container h-auto w-auto">
+                        <img src="/storage/{{$product->foto}}" alt="Foto {{ $product->nama }}" class="overflow-visible object-fit min-w-full h-auto">
                     </div>
                     <div class="grid grid-rows-6">
-                        <div class="row-start-2 row-span-2">
-                            <h1 class="">{{ $product ->nama }}</h1>
+                        <div class="row-start-2">
+                            <h1 class="font-bold text-xl ">{{ $product ->nama }}</h1>
                             <p>{{ "RP. " . $product->harga }}</p>
                             <p class="">{{ "Stok: " . $product->stok }}</p>
                         </div>
+                        <p class="row-start-3">{{ $product->deskripsi }}</p>
                     </div>
                 </div>
-                
-                <div>
-                <p>{{ $product->deskripsi }}</p>
-                </div>
 
-            </div>
-
-            <div class="hidden lg:flex mt-4 lg:h-4/5 lg:w-auto lg:overflow-hidden bg-slate-300 rounded-3xl">
-                <img src="/storage/{{$product->foto}}" alt="" class="object-fit min-w-full h-full pb-0">
             </div>
         </div>
     </div>

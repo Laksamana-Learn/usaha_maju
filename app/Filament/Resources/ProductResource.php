@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 
 class ProductResource extends Resource
 {
@@ -46,8 +47,9 @@ class ProductResource extends Resource
                 TextInput::make('slug')
                 ->disabled(),
 
-                Select::make('kategori')
-                ->options(Category::all()->pluck('kategori', 'kategori'))
+                Select::make('category_id')
+                ->label('Kategori')
+                ->options(Category::all()->pluck('kategori', 'id'))
                 ->required(),
 
                 Textarea::make('deskripsi')
@@ -83,12 +85,8 @@ class ProductResource extends Resource
                 ->searchable()
                 ->label('Nama'),
                 
-                TextColumn::make('kategori')
-                ->searchable()
+                TextColumn::make('category.kategori')
                 ->label('Kategori'),
-                
-                TextColumn::make('deskripsi')
-                ->label('Deskripsi'),
                 
                 TextColumn::make('harga')
                 ->label('Harga'),
@@ -104,7 +102,9 @@ class ProductResource extends Resource
                 
             ])
             ->filters([
-                //
+                SelectFilter::make('category')
+                    ->label('Kategori Product')
+                    ->relationship('category', 'kategori'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

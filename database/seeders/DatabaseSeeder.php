@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Pengguna;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,6 +20,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin Usaha Maju',
             'email' => 'admin@usahamaju.com',
             'password' => bcrypt('tugasakhir123'),
+        ]);
+        
+        Pengguna::factory()->create([
+            'nama' => 'Laksamana',
+            'username' => 'admin',
+            'email' => 'admin@usahamaju.com',
+            'password' => bcrypt('username'),
+            'wa' => '192839218',
         ]);
     }
 }

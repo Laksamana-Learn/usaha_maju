@@ -20,7 +20,7 @@ class Product extends Model
     protected $fillable = [
         'product_id',
         'nama',
-        'kategori',
+        'category_id',
         'slug',
         'deskripsi',
         'harga',
@@ -42,10 +42,6 @@ class Product extends Model
         });
     }
 
-    public function favorite(): HasMany
-    {
-        return $this ->hasMany(Favorite::class);
-    }
 
     public function modal(): HasMany
     {
@@ -59,7 +55,7 @@ class Product extends Model
     
     public function category(): BelongsTo
     {   
-        return $this -> belongsTo(Category::class, 'kategori', 'kategori');
+        return $this -> belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function setNameAttribute($value) {
