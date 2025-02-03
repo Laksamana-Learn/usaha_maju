@@ -31,7 +31,7 @@
 
     
 </head>
-<body class="overflow-y-scroll no-scrollbar">
+<body class="overflow-y-scroll no-scrollbar bg-slate-300">
 
 <x-navbar></x-navbar>
 
@@ -51,22 +51,12 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="/img/3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/img/4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/img/5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
     </div>
     <!-- Slider indicators -->
     <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
     </div>
     <!-- Slider controls -->
     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -88,25 +78,24 @@
 </div>
 
 
-    <div class="md:mt-4">
-        <div class="container text-white">
-            <div class="centered-div text-center text-black"> 
-                    <div>
-                        <h1 class=" text-4xl font-black font-serif">Toko Bangunan <br> Usaha Maju</h1>
-                        <br>
-                        <div class="container w-1/2 overflow-hidden">
-                            <p class="contents font-mono">Kami adalah toko bangunan yang berdedikasi tinggi!</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
+<div class="container grid grid-cols-4 mt-8 bg-slate-100">
+    <div class="flex col-span-2 mx-auto">
+        <img src="/img/3d-nobg.png" alt="3D Pekerja Bangunan">
     </div>
+    <div class="col-span-2 text-center my-auto">
+        <h1 class="font-extrabold font-serif text-3xl text-sky-300">TOKO BANGUNAN <br> USAHA MAJU</h1>
+        <br>
+        <h2 class="font-medium text-xl">Toko kami telah berdiri sejak 2003</h2>
+        <p class="font-serif">Kami memiliki banyak stock dan telah membantu banyak pembangunan</p>
+    </div>
+</div>
     
     
 
 <x-whatsapp></x-whatsapp>
 
 
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

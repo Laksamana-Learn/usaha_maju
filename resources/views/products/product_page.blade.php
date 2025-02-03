@@ -93,9 +93,13 @@
 
 @if ($category_products)
     <div class="grid mx-auto mt-6 max-w-2xl sm:px-6  lg:max-w-7xl lg:grid-cols-4 lg:gap-x-8 lg:px-8 gap-y-32">
-        @foreach ($category_products as $product)
-            <x-productpage :product="$product" />
-        @endforeach
+        @if ($category_products->all() == null)
+            <h3 class="p-4">Tidak ada produk yang berkategori ini</h3>
+        @else
+            @foreach ($category_products as $product)
+                <x-productpage :product="$product" />
+            @endforeach
+        @endif
     </div>
 
 @else

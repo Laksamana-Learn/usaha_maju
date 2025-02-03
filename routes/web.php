@@ -52,9 +52,9 @@ Route::get('/product', function(Category $kategori, Request $request) {
     return view('products/product_page', ["products"=>$products->paginate(8)->onEachSide(2), "categories"=>$categories, 'category_products' => $category_product]);    
 });
 
-Route::get('/detail-product/{product:slug}', function(Product $product) {
-    return view('products/detail_product', ['product'=>$product]);    
-});
+// Route::get('/detail-product/{product:slug}', function(Product $product) {
+//     return view('products/detail_product', ['product'=>$product]);    
+// });
 
 Route::get('/login', [AuthController::class, 'viewLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'submitLogin']) -> name('login.submit');
